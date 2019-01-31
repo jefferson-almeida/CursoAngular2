@@ -1,0 +1,26 @@
+<h5>Diretiva ng-Style</h5>
+<button
+  [style.backgroundColor]="ativo ? 'blue' : 'gray'"
+  [style.color]="ativo ? 'white' : 'black'"
+  [style.fontWeight]="ativo ? 'bold' : 'normal'"
+  [style.fontSize]="tamanhoFonte + 'px'"
+  (click)="mudarAtivo()"
+>
+  mudar atributo 'ativo'
+</button>
+<br>
+<input type="text" [(ngModel)]="tamanhoFonte">
+
+<h5>Diretiva ng-Style</h5>
+<button
+  [ngStyle]="{
+    'backgroundColor': (ativo ? 'blue' : 'gray'),
+    'color' : (ativo ? 'white' : 'black'),
+    'fontSize' : tamanhoFonte + 'px',
+    'fontWeight' : (ativo ? 'bold' : 'normal')
+  }"
+  (click)="mudarAtivo()"
+>
+  mudar atributo 'ativo'
+</button>
+<br>
