@@ -1,3 +1,29 @@
-<p>
-  template-form works!
-</p>
+<h2>
+  template form
+</h2>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <div class="row">
+    <div class="form-group col-6">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" placeholder="digite o email" [(ngModel)]="usuario.email"
+        name="email" required email #email="ngModel"
+        [ngClass]=" {'is-invalid' : email.invalid && email.touched ,'is-valid' : email.valid && email.touched}">
+      <div class="invalid-tooltip">
+        email invalido
+      </div>
+    </div>
+
+    <div class="form-group col-6">
+      <label for="nome">Nome</label>
+      <input type="text" class="form-control" id="nome" placeholder="Nome" [(ngModel)]="usuario.nome" name="nome"
+        required #nome="ngModel"
+        [ngClass]=" {'is-invalid' : nome.invalid && nome.touched ,'is-valid' : nome.valid && nome.touched}">
+      <div class="invalid-tooltip">
+        Nome invalido
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <button type="submit" class="btn btn-danger">Enviar</button>
+</form>
