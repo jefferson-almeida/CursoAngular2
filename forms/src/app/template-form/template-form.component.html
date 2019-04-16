@@ -28,7 +28,7 @@
     <div class="form-group row">
       <div class="col-3">
         <label for="cep">CEP</label>
-        <input type="text" class="form-control" id="cep" placeholder="cep" [(ngModel)]="usuario.cep" name="cep" required
+        <input type="text" class="form-control" id="cep" placeholder="cep" [(ngModel)]="usuario.endereco.cep" name="cep" required
           #cep="ngModel" [ngClass]=" aplicaCssErro(cep)" pattern="^[0-9]{8}$" maxlength=8 
           (blur)="consultaCep(cep)">
         <div class="invalid-tooltip">

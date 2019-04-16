@@ -41,6 +41,8 @@ export class TemplateFormComponent implements OnInit {
           this.usuario.endereco.bairro = dados["bairro"];
           this.usuario.endereco.estado = dados["uf"];
           this.usuario.endereco.cidade = dados["localidade"];
+          console.log(this.usuario);
+
         });
     }
   }
