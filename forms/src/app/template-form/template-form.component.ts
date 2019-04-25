@@ -33,6 +33,7 @@ export class TemplateFormComponent implements OnInit {
     console.log(campo);
 
     if (campo.valid) {
+      
       this.http.get(`https://viacep.com.br/ws/${campo.model}/json`)
         .subscribe(dados => {
           console.log(dados);
@@ -47,8 +48,11 @@ export class TemplateFormComponent implements OnInit {
     }
   }
 
-  onSubmit(f) {
-    console.log(f.value);
+  onSubmit(form) {
+    console.log(form.value);
+
+    this.http.post('endereco/form', JSON.stringify(form.value))
+      .subscribe(dados => console.log(dados));
   }
 
   ngOnInit() {
