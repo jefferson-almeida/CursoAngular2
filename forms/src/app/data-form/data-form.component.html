@@ -1,3 +1,31 @@
-<p>
-  data-form works!
-</p>
+<h2>Data Form - reativo</h2>
+
+<form  class="" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+  <div class="form-group row" >
+    <div class="col-12">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" placeholder="digite o email" formControlName="email" [ngClass]=" aplicaCssErro('email')">
+      <div class="invalid-tooltip">
+        email invalido
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-12">
+      <label for="nome">Nome</label>
+      <input type="text" class="form-control" id="nome" placeholder="Nome"  formControlName="nome" [ngClass]=" aplicaCssErro('nome')">
+      <div class="invalid-tooltip">
+        Nome invalido
+      </div>
+    </div>
+  </div>
+
+
+  <br>
+  <button type="submit" class="btn btn-danger">Enviar</button>
+  <button type="button"  class="btn" (click)="resetarForm()">cancelar</button>
+
+
+</form>
+<app-form-debug [form]="formulario"></app-form-debug> 
