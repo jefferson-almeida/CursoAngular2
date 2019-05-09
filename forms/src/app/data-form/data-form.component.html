@@ -21,6 +21,26 @@
     </div>
   </div>
 
+  <div class="row form-group">
+    <div class=" col-12">
+      <label for="frameworks">Frameworks:  </label>
+      <div class="row">
+            <div class="col-2"
+            *ngFor="let item of formulario.get('frameworks').controls; let i  = index" 
+            >
+              <div class="form-check form-check-inline " formArrayName="frameworks"  >
+                <input type="checkbox" class="form-check-input" id="{{ i }}" formControlName="{{i}}" placeholder="Framework" >
+                <label class="form-check-label" for="{{ i }}">{{ frameworks[i] }}</label>
+              </div>
+            </div>
+        <div class="invalid-tooltip " 
+          [ngClass]="{'d-block': formulario.get('frameworks').touched && formulario.get('frameworks').invalid}">
+          selecione pelomenos 1
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <br>
   <button type="submit" class="btn btn-danger">Enviar</button>
